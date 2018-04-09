@@ -1,0 +1,30 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,target-densitydpi=high-dpi,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  <title>React-WAP-UI</title>
+</head>
+<body>
+  <div class="contents" id="root"></div>
+</body>
+</html>
+<script type="text/javascript" src="./boss-ui/app.build.js"></script>
+<script>
+  document.addEventListener('touchstart',function (event) {
+    if(event.touches.length>1){
+      event.preventDefault();
+    }
+  })
+  var lastTouchEnd=0;
+  document.addEventListener('touchend',function (event) {
+    var now=(new Date()).getTime();
+    if(now-lastTouchEnd<=300){
+      event.preventDefault();
+    }
+    lastTouchEnd=now;
+  },false)
+</script>

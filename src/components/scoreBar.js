@@ -8,8 +8,8 @@ export default class ScoreBar extends Component {
             imgWidth: 529,
             randomValue: 0,
             value: this.props.score||0,
-            strokeWidth: this.props.strokeWidth||20,
-            needleWidth: this.props.needleWidth||20,
+            strokeWidth: this.props.strokeWidth||10,
+            needleWidth: this.props.needleWidth||10,
             showInnerScore: this.props.showInnerScore|| false,
             showOutterScore: this.props.showOutterScore|| false
         }
@@ -21,8 +21,8 @@ export default class ScoreBar extends Component {
       if(value!==nextProps.score){
         this.setState({
           value: nextProps.score||0,
-          strokeWidth: nextProps.strokeWidth||20,
-          needleWidth: nextProps.needleWidth||20,
+          strokeWidth: nextProps.strokeWidth||10,
+          needleWidth: nextProps.needleWidth||10,
         })
         this.runderStart();
       }
@@ -187,9 +187,7 @@ export default class ScoreBar extends Component {
                 {showInnerScore ? <text x={r+(r/10)} y={2*r-(r/4)} >分</text>: ''}
               </svg>
           </div>
-          <div>
-            { showOutterScore ? <div className={'score-info'}><span className={'score'} style={{color: `${this.setColor(randomValue).startColor}`}}>{randomValue||0}</span> 分</div>: ''}
-          </div>
+          { showOutterScore ? <div className={'score-info'}><span className={'score'} style={{color: `${this.setColor(randomValue).startColor}`}}>{randomValue||0}</span> 分</div>: ''}
         </div>);
     }
 }
