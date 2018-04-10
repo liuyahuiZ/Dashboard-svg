@@ -136,13 +136,13 @@ export default class ScoreBar extends Component {
     if (per < latestNumber) {
       per += 2;
       this.setState({
-        randomValue: per
+        randomValue: Number(per.toFixed(2))
       });
     } else if (per > latestNumber) {
       if((per-latestNumber)>2){
         per = per - 2;
         this.setState({
-          randomValue: per
+          randomValue: Number(per.toFixed(2))
         });
       } else{
         this.setState({
@@ -158,7 +158,7 @@ export default class ScoreBar extends Component {
     render () {
         const { imgWidth, randomValue, value, strokeWidth, needleWidth, showInnerScore, showOutterScore } = this.state;
         const r = imgWidth/2*0.76;
-        const marginT = imgWidth/2*0.15;
+        const marginT = imgWidth/2*0.17;
         const site = this.calculateCoordinate(randomValue,r); //线条坐标
         const bgSite = this.calculateCoordinate(100,r); //背景线条坐标
         const stroke = this.setColor(randomValue); //线条颜色

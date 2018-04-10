@@ -1,9 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import ScoreBar from './components/scoreBar';
-import './style/index.less';
+import Use from './use';
 
 ReactDOM.render(
-  <ScoreBar score={90} showOutterScore />,
+  <Use />,
   document.getElementById('root')
 )
